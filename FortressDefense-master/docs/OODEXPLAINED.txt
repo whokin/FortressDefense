@@ -1,0 +1,29 @@
+In our OOD 
+we have created classes that handle the game logc and UI design seperately.
+
+To Draw the game board, we have
+-have a class called Cell that represents each and every individual coordinate
+-designed a class called Board that stores a grid of Cells
+-For every input made by the user, we update our board object accordingly, ie by manipulating the status of the affected cell
+
+
+To handle the active tank collection and fortress health
+-we have designed a class called Tank that is used to instantiate each tank on the board
+-Each tank holds its own attributes such as health, damage and shape (essentially the coordinates)
+-We then create a class called TankCollection that holds the entire collection of tanks in it
+-TankCollection has its own attributes (like cumalativeDmgOutput) which are calculated based the cumalative attributes of all tanks within it
+-We create a class called Fortress that hols the health of the user's Fortress
+-Based on the status of tanks in the TankCollection object, we reduce the health of our fortress accordingly until the user wins/loses
+
+To instantiate and initialize the board with tanks, we
+Create a Game class which
+-adds tanks to the Board object
+-updates the board object
+-checks if the user is victorious or not (ie the user loses)
+-displays the first introductory message on the screen
+
+To handle Ui
+We design a display class called Display that
+-displays the active board grid with the status of each and every cell
+-display the damage output of every tank
+-displays health of fortress
